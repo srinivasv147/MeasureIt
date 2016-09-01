@@ -39,17 +39,34 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iv = (ImageView)findViewById(R.id.imageView);
-        iv.setOnTouchListener(new View.OnTouchListener() {
-            @Override
-            public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(numLines<=2) {
-                    numLines++;
-                    return onImageTouch(view, motionEvent);
-                }
-                return false;
-            }
-        });
+//        iv.setOnTouchListener(new View.OnTouchListener() {
+//            @Override
+//            public boolean onTouch(View view, MotionEvent motionEvent) {
+//                if(numLines<=2) {
+//                    numLines++;
+//                    return onImageTouch(view, motionEvent);
+//                }
+//                return false;
+//            }
+//        });
     }
+    public class MyCanvas extends View{
+        public MyCanvas(Context context){
+            super(context);
+        }
+        @Override
+        protected void onDraw(Canvas canvas){
+            super.onDraw(canvas);
+            Paint painter=new Paint();
+            painter.setColor(Color.WHITE);
+            canvas.drawRect(0,0,512,512,painter);
+            Paint pText=new Paint();
+            pText.setColor(Color.BLACK);
+            pText.setTextSize(20);
+            canvas.drawText("Srinivas",100,100,pText);
+        }
+    }
+
 
 
     public void onGallery(View view){
@@ -86,41 +103,44 @@ public class MainActivity extends AppCompatActivity {
                     Bitmap selectedImage= BitmapFactory.decodeFile(filePath);
                     //Drawable drawable=new BitmapDrawable(getResources(),selectedImage);
                     Bitmap mutable=selectedImage.copy(Bitmap.Config.ARGB_8888,true);//converts bitmap to mutable for use in canvas
+//                    iv.setImageBitmap(mutable);
+//                    canvas=new Canvas(mutable);
+                    View v=new MyCanvas(getApplicationContext());
+                    Canvas canvas=new Canvas(mutable);
+                    v.draw(canvas);
                     iv.setImageBitmap(mutable);
-                    canvas=new Canvas(mutable);
-
                 }
                 break;
         }
     }
-    private boolean onImageTouch(View view,MotionEvent motionEvent)
-    {
-        float downx=0;
-        float downy=0;
-        float upx=0;
-        float upy=0;
-        int action=motionEvent.getAction();
-        switch (action)
-        {
-            case MotionEvent.ACTION_DOWN:
-                downx=motionEvent.getX();
-                downy=motionEvent.getY();
-                canvas.drawLine(0,0,downx,downy,paint);
-                iv.invalidate();
-                break;
-            case MotionEvent.ACTION_MOVE:
-                break;
-            case MotionEvent.ACTION_UP:
-                upx=motionEvent.getX();
-                upy=motionEvent.getY();
-                canvas.drawLine(downx,downy,upx,upy,paint);
-                iv.invalidate();
-                break;
-            case MotionEvent.ACTION_CANCEL:
-                break;
-            default:
-                break;
-        }
-        return true;
-    }
+//    private boolean onImageTouch(View view,MotionEvent motionEvent)
+//    {
+//        float downx=0;
+//        float downy=0;
+//        float upx=0;
+//        float upy=0;
+//        int action=motionEvent.getAction();
+//        switch (action)
+//        {
+//            case MotionEvent.ACTION_DOWN:
+//                downx=motionEvent.getX();
+//                downy=motionEvent.getY();
+//                canvas.drawLine(0,0,downx,downy,paint);
+//                iv.invalidate();
+//                break;
+//            case MotionEvent.ACTION_MOVE:
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                upx=motionEvent.getX();
+//                upy=motionEvent.getY();
+//                canvas.drawLine(downx,downy,upx,upy,paint);
+//                iv.invalidate();
+//                break;
+//            case MotionEvent.ACTION_CANCEL:
+//                break;
+//            default:
+//                break;
+//        }
+//        return true;
+//    }
 }
