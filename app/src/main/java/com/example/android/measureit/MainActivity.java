@@ -33,7 +33,11 @@ public class MainActivity extends AppCompatActivity {
     ImageView iv;
     Bitmap mutable;
     private static int numLines=0;
-
+    private String s;
+    float downx=0;
+    float downy=0;
+    float upx=0;
+    float upy=0;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,11 +46,11 @@ public class MainActivity extends AppCompatActivity {
         iv.setOnTouchListener(new View.OnTouchListener() {
             @Override
             public boolean onTouch(View view, MotionEvent motionEvent) {
-                if(numLines<=2) {
-                    numLines++;
+                //if(numLines<=2) {
+                //    numLines++;
                     return onImageTouch(view, motionEvent);
-                }
-                return true;
+                //}
+                //return false;
             }
         });
     }
@@ -63,7 +67,7 @@ public class MainActivity extends AppCompatActivity {
             Paint pText=new Paint();
             pText.setColor(Color.BLACK);
             pText.setTextSize(20);
-            canvas.drawText("Srinivas",100,100,pText);
+            canvas.drawText(s,100,100,pText);
         }
     }
 
@@ -113,41 +117,40 @@ public class MainActivity extends AppCompatActivity {
                 break;
         }
     }
-//    private boolean onImageTouch(View view,MotionEvent motionEvent)
-//    {
-//        float downx=0;
-//        float downy=0;
-//        float upx=0;
-//        float upy=0;
-//        int action=motionEvent.getAction();
-//        switch (action)
-//        {
-//            case MotionEvent.ACTION_DOWN:
-//                downx=motionEvent.getX();
-//                downy=motionEvent.getY();
-//                canvas.drawLine(0,0,downx,downy,paint);
-//                iv.invalidate();
-//                break;
-//            case MotionEvent.ACTION_MOVE:
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                upx=motionEvent.getX();
-//                upy=motionEvent.getY();
-//                canvas.drawLine(downx,downy,upx,upy,paint);
-//                iv.invalidate();
-//                break;
-//            case MotionEvent.ACTION_CANCEL:
-//                break;
-//            default:
-//                break;
-//        }
-//        return true;
-//    }
-    private boolean onImageTouch(View view,MotionEvent motionEvent){
-        View v=new MyCanvas(getApplicationContext());
-        Canvas canvas=new Canvas(mutable);
-        v.draw(canvas);
-        iv.setImageBitmap(mutable);
+    private boolean onImageTouch(View view,MotionEvent motionEvent)
+    {
+
+        int action=motionEvent.getAction();
+        switch (action)
+        {
+            case MotionEvent.ACTION_DOWN:
+                downx=motionEvent.getX();
+                downy=motionEvent.getY();
+                View v=new MyCanvas(getApplicationContext());
+                Canvas canvas=new Canvas(mutable);
+                s=String.valueOf(downx)+" "+String.valueOf(downy);
+                v.draw(canvas);
+                iv.setImageBitmap(mutable);
+                break;
+            case MotionEvent.ACTION_MOVE:
+                break;
+            case MotionEvent.ACTION_UP:
+                upx=motionEvent.getX();
+                upy=motionEvent.getY();
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                break;
+            default:
+                break;
+        }
         return false;
     }
+//    private boolean onImageTouch(View view,MotionEvent motionEvent){
+//        View v=new MyCanvas(getApplicationContext());
+//        Canvas canvas=new Canvas(mutable);
+//        s="Srinivas";
+//        v.draw(canvas);
+//        iv.setImageBitmap(mutable);
+//        return false;
+//    }
 }
