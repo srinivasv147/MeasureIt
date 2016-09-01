@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
                     numLines++;
                     return onImageTouch(view, motionEvent);
                 }
-                return false;
+                return true;
             }
         });
     }
@@ -148,6 +148,6 @@ public class MainActivity extends AppCompatActivity {
         Canvas canvas=new Canvas(mutable);
         v.draw(canvas);
         iv.setImageBitmap(mutable);
-        return true;
+        return false;
     }
 }
