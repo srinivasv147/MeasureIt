@@ -1,12 +1,2 @@
 <?xml version="1.0" encoding="utf-8"?>
-<items version="2" >
-
-    <item
-        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
-        revision="24.0.1"
-        sha1="5f06cb903379c1937a94bb2db58f3b41e12b1a83">
-        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_857772cf0cc723bb8e11b670a6f3ca35efda351a.jar" />
-    </item>
-
-</items>
+<items version="2" />

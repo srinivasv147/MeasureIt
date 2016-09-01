@@ -31,24 +31,24 @@ public class MainActivity extends AppCompatActivity {
     private static final int SELECTED_IMAGE=1;
     private static final int CAMERA_INTENT=1888;
     ImageView iv;
+    Bitmap mutable;
     private static int numLines=0;
-    Canvas canvas;
-    Paint paint=new Paint(Color.RED);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         iv = (ImageView)findViewById(R.id.imageView);
-//        iv.setOnTouchListener(new View.OnTouchListener() {
-//            @Override
-//            public boolean onTouch(View view, MotionEvent motionEvent) {
-//                if(numLines<=2) {
-//                    numLines++;
-//                    return onImageTouch(view, motionEvent);
-//                }
-//                return false;
-//            }
-//        });
+        iv.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View view, MotionEvent motionEvent) {
+                if(numLines<=2) {
+                    numLines++;
+                    return onImageTouch(view, motionEvent);
+                }
+                return false;
+            }
+        });
     }
     public class MyCanvas extends View{
         public MyCanvas(Context context){
@@ -102,12 +102,12 @@ public class MainActivity extends AppCompatActivity {
 
                     Bitmap selectedImage= BitmapFactory.decodeFile(filePath);
                     //Drawable drawable=new BitmapDrawable(getResources(),selectedImage);
-                    Bitmap mutable=selectedImage.copy(Bitmap.Config.ARGB_8888,true);//converts bitmap to mutable for use in canvas
+                    mutable=selectedImage.copy(Bitmap.Config.ARGB_8888,true);//converts bitmap to mutable for use in canvas
 //                    iv.setImageBitmap(mutable);
 //                    canvas=new Canvas(mutable);
-                    View v=new MyCanvas(getApplicationContext());
+                    /*View v=new MyCanvas(getApplicationContext());
                     Canvas canvas=new Canvas(mutable);
-                    v.draw(canvas);
+                    v.draw(canvas);*/
                     iv.setImageBitmap(mutable);
                 }
                 break;
@@ -143,4 +143,11 @@ public class MainActivity extends AppCompatActivity {
 //        }
 //        return true;
 //    }
+    private boolean onImageTouch(View view,MotionEvent motionEvent){
+        View v=new MyCanvas(getApplicationContext());
+        Canvas canvas=new Canvas(mutable);
+        v.draw(canvas);
+        iv.setImageBitmap(mutable);
+        return true;
+    }
 }
