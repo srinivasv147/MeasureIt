@@ -84,8 +84,11 @@ public class MainActivity extends AppCompatActivity {
                     cursor.close();
 
                     Bitmap selectedImage= BitmapFactory.decodeFile(filePath);
-                    canvas=new Canvas(selectedImage);
-                    iv.setImageBitmap(selectedImage);
+                    //Drawable drawable=new BitmapDrawable(getResources(),selectedImage);
+                    Bitmap mutable=selectedImage.copy(Bitmap.Config.ARGB_8888,true);//converts bitmap to mutable for use in canvas
+                    iv.setImageBitmap(mutable);
+                    canvas=new Canvas(mutable);
+
                 }
                 break;
         }
@@ -102,6 +105,8 @@ public class MainActivity extends AppCompatActivity {
             case MotionEvent.ACTION_DOWN:
                 downx=motionEvent.getX();
                 downy=motionEvent.getY();
+                canvas.drawLine(0,0,downx,downy,paint);
+                iv.invalidate();
                 break;
             case MotionEvent.ACTION_MOVE:
                 break;
