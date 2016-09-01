@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/home/srinivas/.gradle/caches/modules-2/files-2.1/com.android.support/support-annotations/24.1.1/3af19f153122737b372622fa6c81dd11a1c6b999/support-annotations-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="3af19f153122737b372622fa6c81dd11a1c6b999">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/support-annotations-24.1.1_4aa9ab5d2287a3e2e3058a08ab66bb1096b0fe13.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="1256c10604bb098490eab070d76754ac5ceab35c">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.1.1_e279d9a2d3b1e27eb77d672e94c9221ad029f9b0.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f62e763609f65e47dc6c498760a4accf02776788">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.1.1_7ca7f72559e9f42dd18178da082ca92a02f5b3a0.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/libs/internal_impl-24.1.1.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="f78c2f395cb096f9dc1dc07e729922b8fcd3c4f5">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/internal_impl-24.1.1_51c65bcc39df83edb68663365b81c6be9d5adb63.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="c936c1bd42f0c018c18920c7bec619ef056b24f8">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.1.1_8e767db81336e762e4b40dcff0fd14215366fc11.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="64db13f46b52170652bf2223c80c4c18c80ecdfb">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/instant-run-bootstrap_857772cf0cc723bb8e11b670a6f3ca35efda351a.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/incremental-runtime-classes/debug/instant-run.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="5297b9df25608fe6112bdbbf081a881e5120c1f6">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/instant-run_dde48c1f907b23d78c69c01f9b59a86cdf265dd4.jar" />
+    </item>
+    <item
+        jar="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.1.1/jars/classes.jar"
+        jumboMode="true"
+        revision="24.0.1"
+        sha1="6d7d803871e3203465f71a163e7af104f807b446">
+        <dex dex="/home/srinivas/AndroidStudioProjects/MeasureIt/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.1.1_5558e460d1e28dce82bff5d2d05511aeb89e6528.jar" />
+    </item>
+
+</items>
